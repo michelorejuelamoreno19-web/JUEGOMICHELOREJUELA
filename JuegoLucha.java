@@ -8,8 +8,8 @@ class JuegoLucha {
     }
 
     public void iniciarPelea() {
-        System.out.println("🔥 ¡Comienza la batalla épica entre " +
-                kino.getNombre() + " y " + faiden.getNombre() + "! 🔥");
+        System.out.println(" ¡Comienza la batalla épica entre " +
+                kino.getNombre() + " y " + faiden.getNombre() + "!");
 
         while (kino.estaVivo() && faiden.estaVivo()) {
             turno(kino, faiden);
@@ -19,9 +19,9 @@ class JuegoLucha {
         }
 
         if (kino.estaVivo()) {
-            System.out.println("🏆 " + kino.getNombre() + " ha ganado la pelea.");
+            System.out.println("yeahh" + kino.getNombre() + " ha ganado la pelea.");
         } else {
-            System.out.println("🏆 " + faiden.getNombre() + " ha ganado la pelea.");
+            System.out.println("yeahh" + faiden.getNombre() + " ha ganado la pelea.");
         }
     }
 
