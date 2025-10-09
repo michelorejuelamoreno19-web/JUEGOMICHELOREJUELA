@@ -19,9 +19,9 @@ class JuegoLucha {
         }
 
         if (kino.estaVivo()) {
-            System.out.println("yeahh" + kino.getNombre() + " ha ganado la pelea.");
+            System.out.println("yeahh " + kino.getNombre() + " ha ganado la pelea.");
         } else {
-            System.out.println("yeahh" + faiden.getNombre() + " ha ganado la pelea.");
+            System.out.println("yeahh " + faiden.getNombre() + " ha ganado la pelea.");
         }
     }
 
