@@ -13,7 +13,7 @@ public class Kino extends Personaje {
         super("Kino");
     }
 
-    public Kino(String nombre) {
+    public Kino (String nombre) {
         super(nombre);
     }
 
