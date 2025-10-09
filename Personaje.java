@@ -1,4 +1,3 @@
-import java.util.Random;
 
 // Clase base abstracta
 abstract class Personaje {

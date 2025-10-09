@@ -1,4 +1,5 @@
 // Subclase Kino: ataques más rápidos pero de menor daño
+import java.util.Random;
 class Kino extends Personaje {
     private final int MIN_DANO = 10;
     private final int MAX_DANO = 20;

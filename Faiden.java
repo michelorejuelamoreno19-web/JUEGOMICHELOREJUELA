@@ -1,4 +1,5 @@
 // Subclase Faiden: ataques más fuertes pero menos constantes
+import java.util.Random;
 class Faiden extends Personaje {
     private final int MIN_DANO = 12;
     private final int MAX_DANO = 30;
