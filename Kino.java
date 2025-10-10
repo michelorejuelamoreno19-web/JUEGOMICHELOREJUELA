@@ -1,28 +1,22 @@
 import java.util.Random;
 
 /**
- * Kino.java
- * Subclase de Personaje: ataques rápidos y consistentes (daño menor).
+ * Subclase Kino: ataques rápidos pero de menor daño.
  */
 public class Kino extends Personaje {
     private static final int MIN_DANO = 10;
     private static final int MAX_DANO = 20;
-    private final Random rand = new Random();
+    private Random rand = new Random();
 
-    public Kino() {
-        super("Kino");
-    }
-
-    public Kino (String nombre) {
-        super(nombre);
+    public Kino(String nombre) {
+        super(nombre); // se pasa el nombre elegido por el jugador
     }
 
     @Override
     public void atacar(IPersonaje oponente) {
-        if (oponente == null || !oponente.estaVivo()) return;
-        int dano = rand.nextInt(MAX_DANO - MIN_DANO + 1) + MIN_DANO;
-        // Mensaje estilizado para buena visualización
-        System.out.printf("%s ataca rápido a %s → %d daño%n", this.getNombre(), oponente.getNombre(), dano);
+        int dano = rand.nextInt((MAX_DANO - MIN_DANO) + 1) + MIN_DANO;
+        System.out.println(this.nombre + " ataca rápido a " + 
+                oponente.getNombre() + " causando " + dano + " puntos de daño.");
         oponente.recibirDano(dano);
     }
 }

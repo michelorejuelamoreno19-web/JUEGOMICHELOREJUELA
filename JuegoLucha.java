@@ -1,31 +1,36 @@
-class JuegoLucha {
-    private Personaje kino;
-    private Personaje faiden;
+import java.util.Scanner;
 
-    public JuegoLucha() {
-        this.kino = new Kino();
-        this.faiden = new Faiden();
+/**
+ * Clase principal que controla la pelea.
+ */
+public class JuegoLucha {
+    private IPersonaje jugador1;
+    private IPersonaje jugador2;
+
+    public JuegoLucha(IPersonaje jugador1, IPersonaje jugador2) {
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
     public void iniciarPelea() {
-        System.out.println(" ¡Comienza la batalla épica entre " +
-                kino.getNombre() + " y " + faiden.getNombre() + "!");
+        System.out.println("🔥 ¡Comienza la batalla épica entre " +
+                jugador1.getNombre() + " y " + jugador2.getNombre() + "! 🔥\n");
 
-        while (kino.estaVivo() && faiden.estaVivo()) {
-            turno(kino, faiden);
-            if (faiden.estaVivo()) {
-                turno(faiden, kino);
+        while (jugador1.estaVivo() && jugador2.estaVivo()) {
+            turno(jugador1, jugador2);
+            if (jugador2.estaVivo()) {
+                turno(jugador2, jugador1);
             }
         }
 
-        if (kino.estaVivo()) {
-            System.out.println("yeahh " + kino.getNombre() + " ha ganado la pelea.");
+        if (jugador1.estaVivo()) {
+            System.out.println("🏆 " + jugador1.getNombre() + " ha ganado la pelea.");
         } else {
-            System.out.println("yeahh " + faiden.getNombre() + " ha ganado la pelea.");
+            System.out.println("🏆 " + jugador2.getNombre() + " ha ganado la pelea.");
         }
     }
 
-    private void turno(Personaje atacante, Personaje defensor) {
+    private void turno(IPersonaje atacante, IPersonaje defensor) {
         System.out.println("Turno de " + atacante.getNombre() +
                 ". Vida de " + defensor.getNombre() + ": " + defensor.getPuntosDeVida());
         atacante.atacar(defensor);
@@ -34,7 +39,23 @@ class JuegoLucha {
     }
 
     public static void main(String[] args) {
-        JuegoLucha juego = new JuegoLucha();
+        Scanner sc = new Scanner(System.in);
+
+        // Preguntar nombres de los jugadores
+        System.out.print("👤 Ingresa el nombre del jugador que usará a Kino: ");
+        String nombreKino = sc.nextLine();
+
+        System.out.print("👤 Ingresa el nombre del jugador que usará a Faiden: ");
+        String nombreFaiden = sc.nextLine();
+
+        // Crear personajes con los nombres ingresados
+        IPersonaje kino = new Kino(nombreKino);
+        IPersonaje faiden = new Faiden(nombreFaiden);
+
+        // Iniciar el juego
+        JuegoLucha juego = new JuegoLucha(kino, faiden);
         juego.iniciarPelea();
+
+        sc.close();
     }
-} 
+}

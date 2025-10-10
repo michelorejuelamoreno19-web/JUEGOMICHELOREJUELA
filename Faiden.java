@@ -1,28 +1,22 @@
 import java.util.Random;
 
 /**
- * Faiden.java
- * Subclase de Personaje: ataques más fuertes pero con mayor variabilidad.
+ * Subclase Faiden: ataques más fuertes pero más variables.
  */
 public class Faiden extends Personaje {
     private static final int MIN_DANO = 12;
     private static final int MAX_DANO = 30;
-    private final Random rand = new Random();
-
-    public Faiden() {
-        super("Faiden");
-    }
+    private Random rand = new Random();
 
     public Faiden(String nombre) {
-        super(nombre);
+        super(nombre); // se pasa el nombre elegido por el jugador
     }
 
     @Override
     public void atacar(IPersonaje oponente) {
-        if (oponente == null || !oponente.estaVivo()) return;
-        int dano = rand.nextInt(MAX_DANO - MIN_DANO + 1) + MIN_DANO;
-        System.out.printf("%s lanza un golpe fuerte a %s → %d daño%n", this.getNombre(), oponente.getNombre(), dano);
+        int dano = rand.nextInt((MAX_DANO - MIN_DANO) + 1) + MIN_DANO;
+        System.out.println(this.nombre + " lanza un golpe fuerte a " +
+                oponente.getNombre() + " causando " + dano + " puntos de daño.");
         oponente.recibirDano(dano);
     }
 }
-
