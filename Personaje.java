@@ -1,4 +1,3 @@
-import java.util.Objects;
 
  public abstract class Personaje implements IPersonaje {
     protected String nombre;
