@@ -42,10 +42,10 @@ public class JuegoLucha {
         Scanner sc = new Scanner(System.in);
 
         // Preguntar nombres de los jugadores
-        System.out.print(" Ingresa el nombre del jugador : ");
+        System.out.print(" Ingresa el nombre del jugador 1: ");
         String nombre1 = sc.nextLine();
 
-        System.out.print(" Ingresa el nombre del jugador ");
+        System.out.print(" Ingresa el nombre del jugador 2: ");
         String nombre2 = sc.nextLine();
 
         // Crear personajes con los nombres ingresados
