@@ -13,7 +13,7 @@ public class JuegoLucha {
     }
 
     public void iniciarPelea() {
-        System.out.println("🔥 ¡Comienza la batalla épica entre " +
+        System.out.println(" ¡Comienza la batalla épica entre " +
                 jugador1.getNombre() + " y " + jugador2.getNombre() + "! 🔥\n");
 
         while (jugador1.estaVivo() && jugador2.estaVivo()) {
@@ -24,9 +24,9 @@ public class JuegoLucha {
         }
 
         if (jugador1.estaVivo()) {
-            System.out.println("🏆 " + jugador1.getNombre() + " ha ganado la pelea.");
+            System.out.println("Yeahh " + jugador1.getNombre() + " ha ganado la pelea.");
         } else {
-            System.out.println("🏆 " + jugador2.getNombre() + " ha ganado la pelea.");
+            System.out.println("Yeahh " + jugador2.getNombre() + " ha ganado la pelea.");
         }
     }
 
@@ -42,10 +42,10 @@ public class JuegoLucha {
         Scanner sc = new Scanner(System.in);
 
         // Preguntar nombres de los jugadores
-        System.out.print("👤 Ingresa el nombre del jugador que usará a Kino: ");
+        System.out.print(" Ingresa el nombre del jugador : ");
         String nombreKino = sc.nextLine();
 
-        System.out.print("👤 Ingresa el nombre del jugador que usará a Faiden: ");
+        System.out.print(" Ingresa el nombre del jugador ");
         String nombreFaiden = sc.nextLine();
 
         // Crear personajes con los nombres ingresados
