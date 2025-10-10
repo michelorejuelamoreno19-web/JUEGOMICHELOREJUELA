@@ -43,14 +43,14 @@ public class JuegoLucha {
 
         // Preguntar nombres de los jugadores
         System.out.print(" Ingresa el nombre del jugador : ");
-        String nombre = sc.nextLine();
+        String nombre1 = sc.nextLine();
 
         System.out.print(" Ingresa el nombre del jugador ");
-        String nombre = sc.nextLine();
+        String nombre2 = sc.nextLine();
 
         // Crear personajes con los nombres ingresados
-        IPersonaje kino = new Kino(nombre);
-        IPersonaje faiden = new Faiden(nombre);
+        IPersonaje kino = new Kino(nombre1);
+        IPersonaje faiden = new Faiden(nombre2);
 
         // Iniciar el juego
         JuegoLucha juego = new JuegoLucha(kino, faiden);
