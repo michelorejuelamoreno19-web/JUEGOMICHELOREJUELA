@@ -14,7 +14,7 @@ public class JuegoLucha {
 
     public void iniciarPelea() {
         System.out.println(" ¡Comienza la batalla épica entre " +
-                jugador1.getNombre() + " y " + jugador2.getNombre() + "! 🔥\n");
+                jugador1.getNombre() + " y " + jugador2.getNombre() + "! \n");
 
         while (jugador1.estaVivo() && jugador2.estaVivo()) {
             turno(jugador1, jugador2);
