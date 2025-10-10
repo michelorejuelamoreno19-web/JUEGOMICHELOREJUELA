@@ -1,5 +1,4 @@
 import java.util.Random;
-
 /**
  * Subclase Kino: ataques rápidos pero de menor daño.
  */
